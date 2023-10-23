@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Karakter kodlaması ve cihaz genişliği için görünüm ayarları -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three.js Examples - First Person Shooter Game Starter</title>
+    <style>
+      @font-face {
+        font-family: "Robus-BWqOd";
+        src: url("https://www.shanebrumback.com/fonts/Robus-BWqOd.otf")
+          format("opentype");
+      }
+
+      body {
+        margin: 0;
+      }
+
+      canvas {
+        display: block;
+      }
+      /* Oyun alanı kilidi stil ayarları */
+      #blocker {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      /* Oyun talimatları stil ayarları */
+      #instructions {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+      }
+
+      /* Çapraz işaret stil ayarları */
+      #crosshair {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 100px;
+        display: none; /* Hide the crosshair by default */
+      }
+      /* Çapraz işaret stil ayarları */
+      #playButton {
+        font-family: "Robus-BWqOd";
+        font-size: 5vw;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+      }
+
+      p {
+        font-family: Arial;
+        font-size: medium;
+        text-align: center;
+      }
+
+      /* Crosshair stil ayarları */
+      @media (max-width: 900px) {
+        /* Styles for mobile devices with a maximum width of 767px */
+        #playButton {
+          font-family: "Robus-BWqOd";
+          font-size: 15vw; /* Adjust the font size as per your preference */
+        }
+        p {
+          font-size: 4vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Oyun alanı kilidi ve içerikleri -->
+    <div id="blocker">
+      <div id="instructions">
+        <div id="playButton">
+          Play Now
+          <p>
+            ESC - Menu
+            <br />
+            WASF ARROWS - Move
+            <br />
+            LEFT MOUSE - Fire
+            <br />
+            SPACEBAR - Jump
+            <br />
+            M - Play / Pause Music
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Crosshair görseli -->
+    <img id="crosshair" src="images/crosshair4.png" alt="Crosshair" />
+    <!-- Gerekli Three.js kütüphaneleri -->
+    <script src="https://cdn.jsdelivr.net/npm/three@latest/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@latest/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@latest/examples/js/controls/PointerLockControls.js"></script>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
